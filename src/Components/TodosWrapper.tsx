@@ -11,7 +11,7 @@ function TodosWrapper() {
     return true;
   };
   const deleteTodo = (id: string) => {};
-  const toggleTodo = (id: string) => {};
+  const toggleCompleted = (id: string) => {};
   return (
     <div className="TodoWrapper">
       <h1>Todo List ❤️ </h1>
@@ -21,10 +21,12 @@ function TodosWrapper() {
 
       {/* display todos */}
       {todos.map((todo) => (
-        <Todo />
+        <Todo
+          todo={todo}
+          deleteTodo={deleteTodo}
+          toggleCompleted={toggleCompleted}
+        />
       ))}
-
-      <Todo />
     </div>
   );
 }

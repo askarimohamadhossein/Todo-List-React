@@ -1,12 +1,24 @@
-function Todo() {
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+type TTodoProps = {
+  todo: TTodo;
+  deleteTodo: (id: string) => void;
+  toggleCompleted: (id: string) => void;
+};
+
+function Todo({ deleteTodo, todo, toggleCompleted }: TTodoProps) {
   return (
     <div className="Todo">
       <p
-        className="" // or completed className
+        className={`${todo.completed ? "completed" : ""}`} // or completed className
       >
-        Test Todo Title :))
+        {todo.title}
       </p>
-      <div>{/* <FontAwesomeIcon icon={faTrash} /> */}</div>
+
+      <div>
+        <FontAwesomeIcon icon={faTrash} />
+      </div>
     </div>
   );
 }
