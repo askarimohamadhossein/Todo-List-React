@@ -1,4 +1,5 @@
 import { useState } from "react";
+import swal from "sweetalert";
 import Todo from "./Todo";
 import TodoForm from "./TodoForm";
 
@@ -11,7 +12,21 @@ function TodosWrapper() {
     return true;
   };
   const deleteTodo = (id: string) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
+    swal({
+      title: "Are you sure?",
+      icon: "warning",
+      dangerMode: true,
+      buttons: ["NO", "Yes"],
+    }).then((result) => {
+      if (result) {
+        setTodos(todos.filter((todo) => todo.id !== id));
+        swal({
+          title: "Delete successfully!",
+          icon: "success",
+        });
+      }
+    });
+
     return true;
   };
   const toggleCompleted = (id: string) => {};
