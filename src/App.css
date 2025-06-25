@@ -8,7 +8,13 @@
 }
 
 body {
-  background: #8758ff;
+  background: #020024;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 23%,
+    rgba(0, 212, 255, 1) 100%
+  );
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,7 +34,7 @@ h1 {
   background: #1a1a40;
   margin-top: 5rem;
   padding: 2rem;
-  border-radius: 5px;
+  border-radius: 20px;
 }
 
 .TodoForm {
@@ -38,7 +44,7 @@ h1 {
 .todo-input {
   outline: none;
   background: none;
-  border: 1px solid #8758ff;
+  border: 1px solid #4409d9;
   padding: 0.5rem 1rem;
   margin-top: 1rem;
   margin-bottom: 2rem;
@@ -51,7 +57,7 @@ h1 {
 }
 
 .todo-btn {
-  background: #8758ff;
+  background: #4409d9;
   color: #fff;
   border: none;
   padding: 0.55rem;
@@ -62,12 +68,13 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #8758ff;
+  background: #4409d9;
   color: #fff;
   padding: 0.75rem 1rem;
   border-radius: 5px;
   margin-bottom: 1rem;
   cursor: pointer;
+  border-radius: 20px;
 }
 
 .fa-trash {
