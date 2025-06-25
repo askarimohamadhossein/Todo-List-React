@@ -10,18 +10,20 @@ function TodosWrapper() {
 
     return true;
   };
-  const deleteTodo = (id: string) => {};
+  const deleteTodo = (id: string) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+    return true;
+  };
   const toggleCompleted = (id: string) => {};
   return (
     <div className="TodoWrapper">
-      <h1>Todo List ❤️ </h1>
-      {/* Add New Todo Form */}
+      <h1>Todo List ✅ </h1>
 
       <TodoForm addTodo={addTodo} />
 
-      {/* display todos */}
       {todos.map((todo) => (
         <Todo
+          key={todo.id}
           todo={todo}
           deleteTodo={deleteTodo}
           toggleCompleted={toggleCompleted}
